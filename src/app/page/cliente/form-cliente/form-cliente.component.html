@@ -1,0 +1,45 @@
+<!--<h2 mat-dialog-title>{{titulo}}</h2>-->
+<div mat-dialog-title class="blue-gradient">{{datos.accion == 'EDITAR' ? 'EDITAR TIPO PÁRAMETRO' : 'REGISTRAR TIPO PÁRAMETRO'}}</div>
+
+<form *ngIf="reactiveForm" [formGroup]="reactiveForm" #form="ngForm">
+  <mat-dialog-content>
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12">
+        <mat-form-field class="col-12" appearance="outline">
+          <mat-label>Profesión</mat-label>
+          <input matInput name="profesion" formControlName="profesion" placeholder="Profesión" required minlength="1"
+                 maxlength="250" [class.is-invalid]="profesion.invalid && (profesion.dirty || profesion.touched)">
+          <mat-hint *ngIf="profesion.invalid && (profesion.dirty || profesion.touched)">
+            <span *ngIf="profesion.errors?.['required']"> El campo profesión es obligatorio</span>
+            <span *ngIf="profesion.errors?.['minlength']">Minimo 10 caracteres</span>
+            <span *ngIf="profesion.errors?.['maxlength']">Maximo de caracteres es 250</span>
+          </mat-hint>
+        </mat-form-field>
+      </div>
+
+      <div class="col-lg-12 col-md-12 col-sm-12">
+        <mat-form-field class="col-12" appearance="outline" >
+          <input matInput name="detalle" formControlName="detalle" placeholder="Descripción profesión"
+                 maxlength="250" [class.is-invalid]="detalle.invalid && (detalle.dirty || detalle.touched)">
+          <mat-label>Descripción Profesión</mat-label>
+          <mat-error *ngIf="detalle.invalid && (detalle.dirty || detalle.touched)">
+            <span *ngIf="detalle.errors?.['maxlength']" >Maximo de caracteres 250</span>
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+  </mat-dialog-content>
+
+
+  <mat-dialog-actions align="end">
+    <button mat-flat-button color="primary" (click)="close()">
+      <mat-icon>close</mat-icon>
+      Cancelar
+    </button>
+    <button mat-flat-button color="primary" (click)="datos.accion=='EDITAR'? editar():registrar()"
+            [disabled]="!reactiveForm.valid">
+      <mat-icon>{{datos.accion == 'EDITAR' ? 'save_as' : 'save'}}</mat-icon>
+      {{datos.accion == 'EDITAR' ? 'Modificar' : 'Registra'}}
+    </button>
+  </mat-dialog-actions>
+</form>

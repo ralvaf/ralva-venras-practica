@@ -1,0 +1,30 @@
+.mat-dialog-title {
+  margin: -24px -24px 20px -24px;
+  display: block;
+  padding: 7px; /* optional you can remove if don't want padding for dialog title */
+  background:#1565C0;
+  color: white;
+  font-family: Roboto, "Helvetica Neue", sans-serif !important;
+}
+
+/*
+
+:host {
+  ::ng-deep {
+    .mat-form-field-label {
+      !*color: #1d1d1e;*!
+      font-size: 15px;
+      font-weight: bold;
+      font-family: Roboto, "Helvetica Neue", sans-serif !important;;
+    }
+  }
+}
+*/
+
+.mat-form-field-infix {
+  display: block;
+  position: relative;
+  flex: auto;
+  min-width: 0;
+  width: 100% !important;
+}

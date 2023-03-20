@@ -1,1 +1,94 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+
+
+
+
+.navbar {
+  font-family: "Roboto", sans-serif;
+  transition: left 0.25s ease, width 0.25s ease;
+  -webkit-transition: left 0.25s ease, width 0.25s ease;
+  -moz-transition: left 0.25s ease, width 0.25s ease;
+  -ms-transition: left 0.25s ease, width 0.25s ease;
+  background: linear-gradient(120deg, #2d2f32, #128bfc, #18bef1);
+}
+
+/*mat-slide-toggle.mat-primary:not(.mat-checked):not(.mat-disabled) .mat-slide-toggle-bar {
+  background-color: pink;
+}
+
+mat-slide-toggle.mat-accent:not(.mat-checked):not(.mat-disabled) .mat-slide-toggle-bar {
+  background-color: yellow;
+}*/
+
+
+/*.mat-slide-toggle .mat-slide-toggle-thumb {
+  !*width: 13px!important;
+  height: 13px!important;*!
+  background-color: #24c368 !important;
+  !*box-shadow: none !important;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-65%, -57%);
+  border-radius: 3px*!
+}
+
+.mat-slide-toggle.mat-checked .mat-slide-toggle-bar {
+  background-color: #ececec !important;
+  !*width: 32px!important;
+  height: 16px!important;
+  border: 1px solid #24c368;
+  border-radius: 3px!important;*!
+}*/
+
+.mat-flat-button color.mat-primary {
+  /*background: #39b070;*/
+  background: #3182ce;
+  color: #fff;
+}
+
+.mat-flat-button.mat-primary, .mat-raised-button.mat-primary, .mat-fab.mat-primary, .mat-mini-fab.mat-primary {
+  /*background-color: #39b070;*/
+  /*background-color: #1565C0;
+  color: #fff;*/
+
+  /*color: #fff;
+  background-color: #3051d3;
+  border-color: #3051d3;*/
+
+  color: #fff;
+  background-color: #2196f3;
+  border-color: #2196f3;
+}
+.mat-flat-button.mat-success, .mat-raised-button.mat-success, .mat-fab.mat-success, .mat-mini-fab.mat-success {
+  /*background-color: #39b070;*/
+  /*background-color: #2E7D32;
+  color: #fff;*/
+
+  color: #fff;
+  background-color: #19d895;
+  border-color: #19d895;
+}
+
+
+.mat-drawer-inner-container {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  /*background-color: #e8dff3 !important;*/
+  background-color: #fffbfd !important;
+}
+
+
+.mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar {
+  background-color: rgba(33, 150, 243, 0.25);
+}
+.mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-thumb {
+  background-color: #2196f3;
+}
