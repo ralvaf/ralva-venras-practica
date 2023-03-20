@@ -56,6 +56,8 @@ export class RaRestHttpService {
       );
   }*/
 
+
+
   postFile(host: string, url: string, parametro: any): Observable<HttpResponse<Blob>> {
     let httpHeaders = new HttpHeaders({
       'Content-Type' : 'application/json'
