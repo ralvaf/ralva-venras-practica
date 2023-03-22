@@ -22,16 +22,17 @@ export class ClienteService {
   guardar(parametro:any): any {
     return this.httpApiService.post(
       this.hostApi.APPLICATION_API_HOST,
-      '/profesion/agregar', parametro
+      '/agregar', parametro
     );
   }
 
   inicializar(parametro:any): any {
-    return this.httpApiService.post(
+    return this.httpApiService.get(
       this.hostApi.APPLICATION_API_HOST,
-      '/profesion/inicializar', parametro
+      '/listar'//, parametro
     );
   }
+
 
   ver(parametro:any): any {
     return this.httpApiService.post(
@@ -43,14 +44,14 @@ export class ClienteService {
   actualizar(parametro:any): any {
     return this.httpApiService.post(
       this.hostApi.APPLICATION_API_HOST,
-      '/profesion/actualizar', parametro
+      '/actualizar', parametro
     );
   }
 
   cambiarEstado(parametro:any): any {
-    return this.httpApiService.post(
+    return this.httpApiService.delete(
       this.hostApi.APPLICATION_API_HOST,
-      '/profesion/cambiarEstado', parametro
+      '/eliminar/', parametro.codigo
     );
   }
 

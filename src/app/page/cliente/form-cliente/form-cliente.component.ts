@@ -20,7 +20,7 @@ export class FormClienteComponent implements OnInit {
 
   local_data:any;
   public parametro:ClienteModel = new ClienteModel();
-  public idParametro!: number;
+  public codigo!: number;
 
   //private notifyTipoParametro;
 
@@ -35,7 +35,7 @@ export class FormClienteComponent implements OnInit {
     console.log(datos);
     if (datos.accion=='EDITAR'){
       this.parametro = datos.data;// datos.data;
-      this.idParametro = datos.data.idProfesion;
+      this.codigo = datos.data.codigo;
     }
     this.local_data = {...this.local_data};
     //this.notifyTipoParametro = notifierService;
@@ -49,27 +49,46 @@ export class FormClienteComponent implements OnInit {
 
   formsValidar(){
     this.reactiveForm = this.formBuilder.group({
-      profesion: new FormControl(this.parametro.apellido, [
+      nombre: new FormControl(this.parametro.nombre, [
         Validators.required,
         Validators.minLength(10),
         Validators.maxLength(250),
       ]),
-      detalle: new FormControl(this.parametro.nombre, [
+
+      apellido: new FormControl(this.parametro.apellido, [
+        Validators.required,
+        Validators.minLength(10),
         Validators.maxLength(250),
       ]),
-      /*password: new FormControl(this.user.password, [
+
+      email: new FormControl(this.parametro.apellido, [
         Validators.required,
-        Validators.minLength(15),
-      ]),*/
+        Validators.minLength(10),
+        Validators.maxLength(250),
+      ]),
+
+      telefono: new FormControl(this.parametro.apellido, [
+        Validators.required,
+        Validators.minLength(9),
+        Validators.maxLength(250),
+      ])
+
     });
   }
 
-  get detalle() {
-    return this.reactiveForm.get('detalle')!;
+  get nombre() {
+    return this.reactiveForm.get('nombre')!;
   }
 
-  get profesion() {
-    return this.reactiveForm.get('profesion')!;
+  get apellido() {
+    return this.reactiveForm.get('apellido')!;
+  }
+  get email() {
+    return this.reactiveForm.get('email')!;
+  }
+
+  get telefono() {
+    return this.reactiveForm.get('telefono')!;
   }
 
 
@@ -98,10 +117,10 @@ export class FormClienteComponent implements OnInit {
       return;
     }
     this.parametro = this.reactiveForm.value;
-    //this.parametro.usuarioRegistro= 'RALVA';
+
     console.log(this.parametro);
 
-    //this.parametro.usuarioRegistro = 'ROOSBELTH';
+
     this.tipoParametroService.guardar(this.parametro).subscribe((response: any) => {
       console.log(response);
       if (response.estado) {
@@ -113,7 +132,6 @@ export class FormClienteComponent implements OnInit {
   }
 
   editar(){
-
     if (this.reactiveForm.invalid) {
       for (const control of Object.keys(this.reactiveForm.controls)) {
         this.reactiveForm.controls[control].markAsTouched();
@@ -121,10 +139,8 @@ export class FormClienteComponent implements OnInit {
       return;
     }
     this.parametro = this.reactiveForm.value;
-    //this.parametro.usuarioModifica= 'RALVA';
-    //this.parametro.idProfesion= this.idParametro;
-
     console.log('DATOS PARA GUARDAR', this.parametro);
+    this.parametro.codigo = this.codigo;
     this.tipoParametroService.actualizar(this.parametro).subscribe((response: any) => {
       console.log(response);
       if (response.estado) {

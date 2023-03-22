@@ -81,7 +81,7 @@ export class RaRestHttpService {
   }
 
   delete(host: string, url: string, id: number){
-    return this.httpClient.delete<Response>(`${host}${url}/Id?Id=${id}`)
+    return this.httpClient.delete<Response>(`${host}${url}${id}`)
       .pipe(
         retry(1),
         catchError(this.handleError),

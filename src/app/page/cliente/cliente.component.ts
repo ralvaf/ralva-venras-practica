@@ -19,7 +19,7 @@ export class ClienteComponent implements OnInit {
   @ViewChild(MatTable, {static: true}) table!: MatTable<any>;
 
   public lst: any[] = [];
-  public columnas: string[] = ['numeracion', 'actions', 'profesion', 'descripcion', 'estado', 'fechaCreacion', 'usuarioCreacion'];
+  public columnas: string[] = ['numeracion', 'actions', 'nombres', 'apellidos', 'telefono', 'email', 'fechaCreacion'];
   totalElements: number = 0;
   page: number= 0;
   size: number= 12;
@@ -53,7 +53,7 @@ export class ClienteComponent implements OnInit {
       size: this.size,
       profesion: this.profesion
     }).subscribe((resp: any) => {
-      this.lst = this.numeracion(resp.content.datos);
+      this.lst = this.numeracion(resp.content);
       this.totalElements = resp.content.totalElements;
       console.log(this.lst);
     });
@@ -75,15 +75,16 @@ export class ClienteComponent implements OnInit {
   }
 
   openEdit(data: any) {
-    this.tipoParametroService.ver({idProfesion: data.idProfesion}).subscribe((response: any) => {
-      if (response.estado) {
+
+    console.log("pruebaa", data)
+
         const dialogRefEdit = this.dialog.open(FormClienteComponent, {
           width: "40vw",
           disableClose: true,
           hasBackdrop: true,
           data: {
             accion: 'EDITAR',
-            data: response.content
+            data: data
           }
         });
         dialogRefEdit.afterClosed().subscribe(result => {
@@ -92,31 +93,22 @@ export class ClienteComponent implements OnInit {
             this.inicializar();
           }
         });
-      } else {
-        //this.notifier.notify('error', 'Error al registrar!');
-      }
-    });
+
   }
 
-  /*cambiarEstado(data:any){
+  cambiarEstado(data:any){
     console.log(data)
-    if (data.estado=='1'){
-      this.parametro.estado = 0;
-    }else {
-      this.parametro.estado = 1;
-    }
-    this.parametro.idProfesion = data.idProfesion;
-    this.parametro.usuarioModifica = 'ROOSBELTH';
+    this.parametro.codigo = data.codigo;
     this.tipoParametroService.cambiarEstado(this.parametro).subscribe((response: any) => {
       console.log(response);
       if (response.estado) {
         this.inicializar();
-        this.notifier.notify('success', 'Cambios guardados exitosamente!');
+        //this.notifier.notify('success', 'Cambios guardados exitosamente!');
       } else {
-        this.notifier.notify('error', 'Error al guardados cambios!');
+        //this.notifier.notify('error', 'Error al guardados cambios!');
       }
     });
-  }*/
+  }
 
 
   private numeracion(midata: any | any[]) {

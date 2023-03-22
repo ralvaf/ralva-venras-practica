@@ -6,27 +6,55 @@
     <div class="row">
       <div class="col-lg-12 col-md-12 col-sm-12">
         <mat-form-field class="col-12" appearance="outline">
-          <mat-label>Profesión</mat-label>
-          <input matInput name="profesion" formControlName="profesion" placeholder="Profesión" required minlength="1"
-                 maxlength="250" [class.is-invalid]="profesion.invalid && (profesion.dirty || profesion.touched)">
-          <mat-hint *ngIf="profesion.invalid && (profesion.dirty || profesion.touched)">
-            <span *ngIf="profesion.errors?.['required']"> El campo profesión es obligatorio</span>
-            <span *ngIf="profesion.errors?.['minlength']">Minimo 10 caracteres</span>
-            <span *ngIf="profesion.errors?.['maxlength']">Maximo de caracteres es 250</span>
+          <mat-label>Nombres</mat-label>
+          <input matInput name="nombre" formControlName="nombre" placeholder="Nombres" required minlength="1"
+                 maxlength="250" [class.is-invalid]="nombre.invalid && (nombre.dirty || nombre.touched)">
+          <mat-hint *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)">
+            <span *ngIf="nombre.errors?.['required']"> El campo profesión es obligatorio</span>
+            <span *ngIf="nombre.errors?.['minlength']">Minimo 10 caracteres</span>
+            <span *ngIf="nombre.errors?.['maxlength']">Maximo de caracteres es 250</span>
           </mat-hint>
         </mat-form-field>
       </div>
 
       <div class="col-lg-12 col-md-12 col-sm-12">
-        <mat-form-field class="col-12" appearance="outline" >
-          <input matInput name="detalle" formControlName="detalle" placeholder="Descripción profesión"
-                 maxlength="250" [class.is-invalid]="detalle.invalid && (detalle.dirty || detalle.touched)">
-          <mat-label>Descripción Profesión</mat-label>
-          <mat-error *ngIf="detalle.invalid && (detalle.dirty || detalle.touched)">
-            <span *ngIf="detalle.errors?.['maxlength']" >Maximo de caracteres 250</span>
-          </mat-error>
+        <mat-form-field class="col-12" appearance="outline">
+          <mat-label>Apellido</mat-label>
+          <input matInput name="apellido" formControlName="apellido" placeholder="apellido" required minlength="1"
+                 maxlength="250" [class.is-invalid]="apellido.invalid && (apellido.dirty || apellido.touched)">
+          <mat-hint *ngIf="apellido.invalid && (apellido.dirty || apellido.touched)">
+            <span *ngIf="apellido.errors?.['required']"> El campo profesión es obligatorio</span>
+            <span *ngIf="apellido.errors?.['minlength']">Minimo 10 caracteres</span>
+            <span *ngIf="apellido.errors?.['maxlength']">Maximo de caracteres es 250</span>
+          </mat-hint>
         </mat-form-field>
       </div>
+      <div class="col-lg-12 col-md-12 col-sm-12">
+        <mat-form-field class="col-12" appearance="outline">
+          <mat-label>E-mail</mat-label>
+          <input matInput name="email" formControlName="email" placeholder="email" required minlength="1"
+                 maxlength="250" [class.is-invalid]="email.invalid && (email.dirty || email.touched)">
+          <mat-hint *ngIf="email.invalid && (email.dirty || email.touched)">
+            <span *ngIf="email.errors?.['required']"> El campo profesión es obligatorio</span>
+            <span *ngIf="email.errors?.['minlength']">Minimo 10 caracteres</span>
+            <span *ngIf="email.errors?.['maxlength']">Maximo de caracteres es 250</span>
+          </mat-hint>
+        </mat-form-field>
+      </div>
+
+      <div class="col-lg-12 col-md-12 col-sm-12">
+        <mat-form-field class="col-12" appearance="outline">
+          <mat-label>Telefono</mat-label>
+          <input matInput name="telefono" formControlName="telefono" placeholder="telefono" required minlength="1"
+                 maxlength="250" [class.is-invalid]="telefono.invalid && (telefono.dirty || telefono.touched)">
+          <mat-hint *ngIf="telefono.invalid && (telefono.dirty || telefono.touched)">
+            <span *ngIf="telefono.errors?.['required']"> El campo profesión es obligatorio</span>
+            <span *ngIf="telefono.errors?.['minlength']">Minimo 10 caracteres</span>
+            <span *ngIf="telefono.errors?.['maxlength']">Maximo de caracteres es 250</span>
+          </mat-hint>
+        </mat-form-field>
+      </div>
+
     </div>
   </mat-dialog-content>
 
