@@ -14,7 +14,7 @@ import { AboutComponent } from './page/about/about.component';
 import { FormClienteComponent } from './page/cliente/form-cliente/form-cliente.component';
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 
-
+import {NgxChartsModule} from "@swimlane/ngx-charts";
 
 
 @NgModule({
@@ -32,7 +32,9 @@ import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
     MaterialModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgxChartsModule,
+
   ],
   providers: [
     { provide: MAT_DIALOG_DATA, useValue: {} },

@@ -37,7 +37,7 @@ export class ClienteService {
   ver(parametro:any): any {
     return this.httpApiService.post(
       this.hostApi.APPLICATION_API_HOST,
-      '/profesion/ver', parametro
+      '/cliente/ver', parametro
     );
   }
 

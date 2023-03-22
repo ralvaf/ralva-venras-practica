@@ -61,13 +61,13 @@ export class FormClienteComponent implements OnInit {
         Validators.maxLength(250),
       ]),
 
-      email: new FormControl(this.parametro.apellido, [
+      email: new FormControl(this.parametro.email, [
         Validators.required,
         Validators.minLength(10),
         Validators.maxLength(250),
       ]),
 
-      telefono: new FormControl(this.parametro.apellido, [
+      telefono: new FormControl(this.parametro.telefono, [
         Validators.required,
         Validators.minLength(9),
         Validators.maxLength(250),

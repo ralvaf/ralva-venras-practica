@@ -56,7 +56,7 @@ export class InicioComponent implements OnInit {
 
   ngOnInit() {
     this.isMenuOpen = true;  // Open side menu by default
-    this.title = 'Material Layout Demo';
+    this.title = 'Sistema ventas - ALVA FLORES ROOSBELTH EUFRAIN';
   }
 
   ngDoCheck() {
@@ -106,7 +106,7 @@ export class InicioComponent implements OnInit {
       route: '/',
     },
     {
-      displayName: 'Información',
+      displayName: 'Grafico de PIE',
       iconName: 'desktop_windows',
       route: '/about',
     }

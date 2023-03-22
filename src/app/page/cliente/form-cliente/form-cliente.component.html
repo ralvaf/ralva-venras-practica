@@ -1,5 +1,4 @@
-<!--<h2 mat-dialog-title>{{titulo}}</h2>-->
-<div mat-dialog-title class="blue-gradient">{{datos.accion == 'EDITAR' ? 'EDITAR TIPO PÁRAMETRO' : 'REGISTRAR TIPO PÁRAMETRO'}}</div>
+<div mat-dialog-title class="blue-gradient">{{datos.accion == 'EDITAR' ? 'EDITAR CLIENTE' : 'REGISTRAR CLIENTE'}}</div>
 
 <form *ngIf="reactiveForm" [formGroup]="reactiveForm" #form="ngForm">
   <mat-dialog-content>

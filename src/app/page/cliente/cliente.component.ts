@@ -25,7 +25,7 @@ export class ClienteComponent implements OnInit {
   size: number= 12;
   tipoParametro!: ClienteModel;
   parametro: ClienteModel  = new ClienteModel();
-  profesion:string='';
+  nombre:string='';
   version = VERSION;
 
   public loginForm = this.formBuilder.group({
@@ -51,7 +51,7 @@ export class ClienteComponent implements OnInit {
     this.tipoParametroService.inicializar({
       page: this.page,
       size: this.size,
-      profesion: this.profesion
+      profesion: this.nombre
     }).subscribe((resp: any) => {
       this.lst = this.numeracion(resp.content);
       this.totalElements = resp.content.totalElements;
